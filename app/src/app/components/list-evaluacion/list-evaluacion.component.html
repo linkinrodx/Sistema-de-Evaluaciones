@@ -22,17 +22,56 @@
     <div class="row text-center" style="margin: 50px 0;">
         <div class="col-6">
             <span>Fecha Inicio: </span>
-            <input type="date" name="" id="">
+            <!-- <input type="date" name="" id=""> -->
+            <input matInput [matDatepicker]="fechainicio" placeholder="Elige una Fecha">
+            <mat-datepicker-toggle matSuffix [for]="fechainicio"></mat-datepicker-toggle>
+            <mat-datepicker #fechainicio></mat-datepicker>
         </div>
         <div class="col-6">
             <span>Fecha Fin: </span>
-            <input type="date" name="" id="">
+            <!-- input type="date" name="" id=""> -->
+            <input matInput [matDatepicker]="fechafin" placeholder="Elige una Fecha">
+            <mat-datepicker-toggle matSuffix [for]="fechafin"></mat-datepicker-toggle>
+            <mat-datepicker #fechafin></mat-datepicker>
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 mb-5">
             <!-- <table mat-table [dataSource]="listEvaluacion">
             </table> -->
+
+            <table mat-table [dataSource]="listEvaluacion" class="mat-elevation-z8" style="width: 100%;">
+              
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                  <th mat-header-cell *matHeaderCellDef class="text-center"> Evaluación No. </th>
+                  <td mat-cell *matCellDef="let element" class="text-center"> {{element.evaluacionId}} </td>
+                </ng-container>
+              
+                <!-- Name Column -->
+                <ng-container matColumnDef="fechainicio">
+                  <th mat-header-cell *matHeaderCellDef class="text-center"> Fecha Creación </th>
+                  <td mat-cell *matCellDef="let element" class="text-center"> {{element.fechaCreacion}} </td>
+                </ng-container>
+              
+                <!-- Weight Column -->
+                <ng-container matColumnDef="fechafin">
+                  <th mat-header-cell *matHeaderCellDef class="text-center"> Fecha Modiciación </th>
+                  <td mat-cell *matCellDef="let element" class="text-center"> {{element.fechaModicacion}} </td>
+                </ng-container>
+              
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="modificar">
+                  <th mat-header-cell *matHeaderCellDef class="text-center"> Acciones </th>
+                  <td mat-cell *matCellDef="let element" class="text-center">
+                      <button *ngIf="element.modificar" class="btn btn-link">Modificar</button>
+                  </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+                
+            </table>
         </div>
     </div>
 </div>

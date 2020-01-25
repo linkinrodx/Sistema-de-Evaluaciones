@@ -14,6 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PointerSelectionComponent } from './shared/components/pointer-selection/pointer-selection.component';
 import { LogoutComponent } from './components/logout/logout.component';
 
+import { MatTableModule } from '@angular/material/table';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +32,15 @@ import { LogoutComponent } from './components/logout/logout.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule    
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [EvaluacionRestService],
+  providers: [
+    EvaluacionRestService,
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
