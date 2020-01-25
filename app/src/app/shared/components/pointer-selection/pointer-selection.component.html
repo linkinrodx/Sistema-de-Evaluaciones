@@ -1,0 +1,13 @@
+
+
+<div style="border: 1px solid black; width: 100%; height: 40px;">
+    <div *ngFor="let point of listPoints" 
+    class="btn btn-light"
+    style="display: inline-block; text-align: center; height: 100%; border-radius: 0; border: 0;" 
+    [ngClass]="point.selected ? 'selected' : ''"
+    [ngStyle]="{'width': point.width + '%'}"
+    (click)="selectPoint(point.value)"
+    >
+        {{point.value}}
+    </div>
+</div>

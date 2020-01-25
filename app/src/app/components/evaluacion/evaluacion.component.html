@@ -1,0 +1,43 @@
+
+<app-logout></app-logout>
+
+<div class="container-fluid" style="margin-top: 20px; padding-left: 50px;">
+    <div class="row" >
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="javascript:void(0)" (click)="regresar()">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Evaluación</li>
+            </ol>
+          </nav>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
+
+    <div class="row text-center">
+        <div class="col-12">
+            <h1>Evaluación</h1>
+        </div>
+    </div>
+    <div class="row text-center" style="margin: 50px 0;">
+        <div class="col-12">
+            <span>Correo: </span>
+            <span>{{user.correo}}</span>
+        </div>
+        <div class="col-12">
+            <span>Nombres: </span>
+            <span>{{user.nombres}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <label for="">Como calificaria su servicio:</label>
+        </div>
+        <div class="col-12">
+            <app-pointer-selection [maxPoints]="10"></app-pointer-selection>
+        </div>
+        <div class="col-12 d-flex justify-content-center pt-5">
+            <button class="btn btn-success">Enviar</button>
+        </div>
+    </div>
+</div>
