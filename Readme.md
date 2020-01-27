@@ -10,7 +10,7 @@ Este sistema fue desarrollado en:
 
 ## Los proyectos se desplegaron y sus links de acceso son los siguientes:
 
-- app: http://proyecto.evaluaciones.s3-website-us-west-2.amazonaws.com/login
+- app: http://proyecto.evaluaciones.s3-website-us-west-2.amazonaws.com
 - api: http://wappevaluacionapieu2.azurewebsites.net (pruebas a través de swagger.html)
 - wcf: https://appsevaluacionwcfeu2.azurewebsites.net
 
