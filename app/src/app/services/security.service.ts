@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsuarioResponse } from '../models/response/usuario.response';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class SecurityService {
   ) { }
 
   getUsuario(){
-    var user = JSON.parse(localStorage.getItem("user"));
+    var user = new UsuarioResponse(JSON.parse(localStorage.getItem("user")));
     return user;
   }
 

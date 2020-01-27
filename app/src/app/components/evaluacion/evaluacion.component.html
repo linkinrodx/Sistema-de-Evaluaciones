@@ -22,11 +22,11 @@
     <div class="row text-center" style="margin: 50px 0;">
         <div class="col-12">
             <span>Correo: </span>
-            <span>{{user.correo}}</span>
+            <span>{{usuario.correo}}</span>
         </div>
         <div class="col-12">
             <span>Nombres: </span>
-            <span>{{user.nombres}}</span>
+            <span>{{usuario.nombres}}</span>
         </div>
     </div>
     <div class="row">
@@ -34,10 +34,14 @@
             <label for="">Como calificaria su servicio:</label>
         </div>
         <div class="col-12">
-            <app-pointer-selection [maxPoints]="10"></app-pointer-selection>
+            <app-pointer-selection 
+            [maxPoints]="10" 
+            [(selectedPoint)]="calificacion"
+            >
+            </app-pointer-selection>
         </div>
         <div class="col-12 d-flex justify-content-center pt-5">
-            <button class="btn btn-success">Enviar</button>
+            <button class="btn btn-success" (click)="setEvaluacion()">Enviar</button>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-pointer-selection',
@@ -7,8 +7,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PointerSelectionComponent implements OnInit {
 
+  selectedPointValue = 0;
+
+  @Input()
+  get selectedPoint() {
+    return this.selectedPointValue;
+  }
+  @Output() selectedPointChange = new EventEmitter();
+  set selectedPoint(val) {
+    this.selectedPointValue = val;
+    this.selectPoint(val);
+  }
+
+
   @Input() maxPoints: number;
-  selectedPoint: number;
+
   listPoints = [];
 
   constructor() { }
@@ -35,8 +48,10 @@ export class PointerSelectionComponent implements OnInit {
     if (point){
       this.listPoints.forEach(o=> o.selected = false);
       point.selected = true;
-      this.selectedPoint = point.value;
+      this.selectedPointValue = point.value;
     }
+
+    this.selectedPointChange.emit(this.selectedPointValue);
   }
   
 }

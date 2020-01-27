@@ -17,6 +17,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     BrowserAnimationsModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [
     EvaluacionRestService,

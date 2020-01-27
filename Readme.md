@@ -12,4 +12,5 @@
 ### SOAP
 
 - GetUser
+- InsUser
 - UpdUser
